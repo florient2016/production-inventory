@@ -4,61 +4,49 @@ all:
     # =========================
     # Groupes globaux transverses (pour ciblage & group_vars)
     # =========================
-    #linux: {}
-    #windows: {}
+    linux: {}
+    windows: {}
 
-    env_dev: 
-      children:
-        linux: {}
-        windows: {}
-    env_recette: 
-      children:
-        linux: {}
-        windows: {}
-    env_preprod: 
-      children:
-        linux: {}
-        windows: {}
-    env_prod: 
-      children:
-        linux: {}
-        windows: {}
-
-    site_cloud: {}
-    cloud_aws: {}
-    cloud_gcp: {}
-    cloud_azure: {}
+    env_dev: {}
+    env_recette: {}
+    env_preprod: {}
+    env_prod: {}
 
     # =========================
-    # DEPARTMENT FINANCE 
+    # FINANCE
     # =========================
     dept_finance:
       children:
-        env_dev: {} 
-        linux:
-          hosts:
-            fin-dev-lnx-svc-01:
-              ansible_host: 10.10.10.11
-            fin-dev-lnx-app-01:
-              ansible_host: 10.10.10.21
-        windows:
-          hosts:
-            fin-dev-win-app-01:
-              ansible_host: 10.10.0.6
 
-        env_recette:
-          children: 
+        finance_dev:
+          children:
+            env_dev: {}
             linux:
               hosts:
-                fin-qa-lnx-svc-01:
+                fin-dev-lnx-web-01:
+                  ansible_host: 10.10.10.11
+                fin-dev-lnx-app-01:
+                  ansible_host: 10.10.10.21
+            windows:
+              hosts:
+                fin-dev-win-app-01:
+                  ansible_host: 10.10.20.21
+
+        finance_recette:
+          children:
+            env_recette: {}
+            linux:
+              hosts:
+                fin-qa-lnx-app-01:
                   ansible_host: 10.10.11.21
             windows:
               hosts:
                 fin-qa-win-app-01:
                   ansible_host: 10.10.21.21
 
-        env_preprod:
-          children: 
+        finance_preprod:
+          children:
+            env_preprod: {}
             linux:
               hosts:
                 fin-ppd-lnx-db-01:
@@ -68,8 +56,9 @@ all:
                 fin-ppd-win-db-01:
                   ansible_host: 10.10.22.31
 
-        env_prod:
-          children: 
+        finance_prod:
+          children:
+            env_prod: {}
             linux:
               hosts:
                 fin-prd-lnx-db-01:
@@ -80,12 +69,14 @@ all:
                   ansible_host: 10.10.23.21
 
     # =========================
-    #  DEPARTMENT RH
+    # RH
     # =========================
     dept_rh:
       children:
-        env_dev:
-          children: 
+
+        rh_dev:
+          children:
+            env_dev: {}
             linux:
               hosts:
                 rh-dev-lnx-app-01:
@@ -95,8 +86,9 @@ all:
                 rh-dev-win-app-01:
                   ansible_host: 10.20.20.21
 
-        env_recette:
-          children: 
+        rh_recette:
+          children:
+            env_recette: {}
             linux:
               hosts:
                 rh-qa-lnx-app-01:
@@ -106,8 +98,9 @@ all:
                 rh-qa-win-app-01:
                   ansible_host: 10.20.21.21
 
-        env_preprod:
-          children: 
+        rh_preprod:
+          children:
+            env_preprod: {}
             linux:
               hosts:
                 rh-ppd-lnx-db-01:
@@ -117,8 +110,9 @@ all:
                 rh-ppd-win-db-01:
                   ansible_host: 10.20.22.31
 
-        env_prod:
-          children: 
+        rh_prod:
+          children:
+            env_prod: {}
             linux:
               hosts:
                 rh-prd-lnx-db-01:
@@ -129,12 +123,14 @@ all:
                   ansible_host: 10.20.23.21
 
     # =========================
-    # DEPARTMENT IT
+    # IT
     # =========================
     dept_it:
       children:
-        env_dev:
-          children: 
+
+        it_dev:
+          children:
+            env_dev: {}
             linux:
               hosts:
                 it-dev-lnx-app-01:
@@ -144,8 +140,9 @@ all:
                 it-dev-win-app-01:
                   ansible_host: 10.30.20.21
 
-        env_recette:
-          children: 
+        it_recette:
+          children:
+            env_recette: {}
             linux:
               hosts:
                 it-qa-lnx-app-01:
@@ -155,8 +152,9 @@ all:
                 it-qa-win-app-01:
                   ansible_host: 10.30.21.21
 
-        env_preprod:
-          children: 
+        it_preprod:
+          children:
+            env_preprod: {}
             linux:
               hosts:
                 it-ppd-lnx-db-01:
@@ -166,8 +164,9 @@ all:
                 it-ppd-win-db-01:
                   ansible_host: 10.30.22.31
 
-        env_prod: 
+        it_prod:
           children:
+            env_prod: {}
             linux:
               hosts:
                 it-prd-lnx-db-01:
@@ -178,12 +177,14 @@ all:
                   ansible_host: 10.30.23.21
 
     # =========================
-    # DEPARTMENT SALES
+    # SALES
     # =========================
     dept_sales:
       children:
-        env_dev:
-          children: 
+
+        sales_dev:
+          children:
+            env_dev: {}
             linux:
               hosts:
                 sales-dev-lnx-web-01:
@@ -193,8 +194,9 @@ all:
                 sales-dev-win-app-01:
                   ansible_host: 10.40.20.21
 
-        env_recette:
-          children: 
+        sales_recette:
+          children:
+            env_recette: {}
             linux:
               hosts:
                 sales-qa-lnx-app-01:
@@ -204,8 +206,9 @@ all:
                 sales-qa-win-app-01:
                   ansible_host: 10.40.21.21
 
-        env_preprod:
-          children: 
+        sales_preprod:
+          children:
+            env_preprod: {}
             linux:
               hosts:
                 sales-ppd-lnx-db-01:
@@ -215,8 +218,9 @@ all:
                 sales-ppd-win-db-01:
                   ansible_host: 10.40.22.31
 
-        env_prod:
+        sales_prod:
           children:
+            env_prod: {}
             linux:
               hosts:
                 sales-prd-lnx-db-01:
