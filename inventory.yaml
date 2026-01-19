@@ -45,7 +45,7 @@ all:
             windows:
               hosts:
                 fin-dev-win-app-01:
-                  ansible_host: 10.10.20.21
+                  ansible_host: 10.10.0.6
 
         env_recette:
           children: 
