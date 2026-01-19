@@ -4,10 +4,10 @@ company_domain: "itsolutions.me"
 managed_by: "AAP-2.6"
 inventory_source: "scm-git"
 
-timezone: "Europe/Berlin"
+timezone: "Europe/Paris"
 
-# Compte de service (adapter)
+# Default SSH user for Linux hosts
 ansible_user: "svc-ansible"
 
-# SSH (Linux)
+# Disable host key checking for SSH connections
 ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
