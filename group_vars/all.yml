@@ -10,8 +10,6 @@ dns_servers:
   - "10.0.0.10"
   - "10.0.0.11"
 
-default_domain: "corp.itssolutions.me"
+default_domain: "itssolutions.me"
 
-baseline_tags:
-  - "managed_by_ansible"
-  - "inventory_itssolutions"
+
