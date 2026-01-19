@@ -1,0 +1,3 @@
+env_name: "development"
+change_freeze: false
+patch_window: "Tue 20:00-22:00"

@@ -1,0 +1,108 @@
+all:
+  children:
+
+    # =========================
+    # Environnements
+    # =========================
+    env_dev: {}
+    env_recette: {}
+    env_preprod: {}
+    env_prod: {}
+
+    # =========================
+    # Départements
+    # =========================
+    dept_finance: {}
+    dept_rh: {}
+    dept_it: {}
+    dept_sales: {}
+
+    # =========================
+    # OS
+    # =========================
+    linux: {}
+    windows: {}
+
+    # =========================
+    # Sites / Localisation
+    # =========================
+    site_datacenter: {}
+    site_cloud: {}
+
+    # =========================
+    # Cloud providers
+    # =========================
+    cloud_aws: {}
+    cloud_azure: {}
+
+    # =========================
+    # Groupes "leaf" (dept + env + os) => cibles directes
+    # =========================
+
+    # -------- FINANCE / DEV
+    finance_dev_linux:
+      children:
+        dept_finance: {}
+        env_dev: {}
+        linux: {}
+        site_datacenter: {}
+      hosts:
+        fin-dev-lnx-web-01:
+          ansible_host: 10.10.10.11
+        fin-dev-lnx-app-01:
+          ansible_host: 10.10.10.21
+
+    finance_dev_windows:
+      children:
+        dept_finance: {}
+        env_dev: {}
+        windows: {}
+        site_datacenter: {}
+      hosts:
+        fin-dev-win-app-01:
+          ansible_host: 10.10.20.21
+
+    # -------- FINANCE / PROD (DC + Cloud Azure exemple)
+    finance_prod_linux:
+      children:
+        dept_finance: {}
+        env_prod: {}
+        linux: {}
+        site_datacenter: {}
+      hosts:
+        fin-prd-lnx-db-01:
+          ansible_host: 10.10.10.31
+
+    finance_prod_windows:
+      children:
+        dept_finance: {}
+        env_prod: {}
+        windows: {}
+        site_cloud: {}
+        cloud_azure: {}
+      hosts:
+        fin-prd-az-win-app-01:
+          ansible_host: 10.50.20.21
+
+    # -------- IT / RECETTE (Cloud AWS Linux exemple)
+    it_recette_linux:
+      children:
+        dept_it: {}
+        env_recette: {}
+        linux: {}
+        site_cloud: {}
+        cloud_aws: {}
+      hosts:
+        it-qa-aws-lnx-mon-01:
+          ansible_host: 172.31.10.51
+
+    # -------- SALES / PREPROD (Windows DC exemple)
+    sales_preprod_windows:
+      children:
+        dept_sales: {}
+        env_preprod: {}
+        windows: {}
+        site_datacenter: {}
+      hosts:
+        sales-ppd-win-db-01:
+          ansible_host: 10.10.20.31

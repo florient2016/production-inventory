@@ -1,0 +1,2 @@
+site: "cloud"
+cloud_region_default: "eu-central-1"

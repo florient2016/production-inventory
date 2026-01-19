@@ -1,0 +1,13 @@
+company_name: "ITSSolutions"
+company_domain: "itsolutions.me"
+
+managed_by: "AAP-2.6"
+inventory_source: "scm-git"
+
+timezone: "Europe/Berlin"
+
+# Compte de service (adapter)
+ansible_user: "svc-ansible"
+
+# SSH (Linux)
+ansible_ssh_common_args: "-o StrictHostKeyChecking=no"

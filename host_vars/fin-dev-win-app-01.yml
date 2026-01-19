@@ -1,0 +1,3 @@
+function: "app"
+# Exemple: override user par hote (si nécessaire)
+# ansible_user: "svc-ansible-win"
