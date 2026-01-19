@@ -38,7 +38,7 @@ all:
           children: 
             linux:
               hosts:
-                fin-dev-lnx-web-01:
+                fin-dev-lnx-svc-01:
                   ansible_host: 10.10.10.11
                 fin-dev-lnx-app-01:
                   ansible_host: 10.10.10.21
@@ -51,7 +51,7 @@ all:
           children: 
             linux:
               hosts:
-                fin-qa-lnx-app-01:
+                fin-qa-lnx-svc-01:
                   ansible_host: 10.10.11.21
             windows:
               hosts:
