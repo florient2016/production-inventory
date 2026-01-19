@@ -1,3 +1,4 @@
-env_name: "development"
-change_freeze: false
-
+env: dev
+monitoring_level: basic
+backup_policy: none
+change_approval_required: false

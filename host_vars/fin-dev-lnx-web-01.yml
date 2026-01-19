@@ -1,7 +1,4 @@
-function: "app"
-role_tier: "backend"
-owner_team: "dept_finance"
-ansible_host: 10.10.10.21
+ansible_host: 10.10.10.11
 ansible_user: ansible
 ansible_connection: ssh
 ansible_port: 22
@@ -9,5 +6,5 @@ ansible_port: 22
 env: dev
 department: finance
 os_family: linux
-host_role: app
+host_role: web
 criticality: low

@@ -1,7 +1,20 @@
+os_family: linux
+
 ansible_connection: ssh
 ansible_port: 22
+ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 
-ansible_become: true
-ansible_become_method: sudo
 
-ansible_python_interpreter: /usr/bin/python3
+linux_packages_baseline:
+  - curl
+  - vim
+  - rsyslog
+  - chrony
+
+linux_services_baseline:
+  - chronyd
+  - rsyslog
+
+ssh_hardening:
+  permit_root_login: false
+  password_authentication: false

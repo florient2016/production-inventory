@@ -1,1 +1,4 @@
-env_name: preproduction
+env: preprod
+monitoring_level: enhanced
+backup_policy: daily
+change_approval_required: true

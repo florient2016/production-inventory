@@ -1,13 +1,19 @@
+timezone: Europe/Paris
+
 company_name: "ITSSolutions"
-company_domain: "itsolutions.me"
 
-managed_by: "AAP-2.6"
-inventory_source: "scm-git"
+ntp_servers:
+  - "0.pool.ntp.org"
+  - "1.pool.ntp.org"
 
-timezone: "Europe/Paris"
+dns_servers:
+  - "10.0.0.10"
+  - "10.0.0.11"
 
-# Default SSH user for Linux hosts
-ansible_user: "svc-ansible"
+default_domain: "corp.itssolutions.me"
 
-# Disable host key checking for SSH connections
-ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+ansible_common_user: "ansible"
+
+baseline_tags:
+  - "managed_by_ansible"
+  - "inventory_itssolutions"
