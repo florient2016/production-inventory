@@ -8,7 +8,7 @@ all:
               hosts:
                 fin-dev-lnx-web-01:
                 fin-dev-lnx-app-01:
-                winserv.itssolutions.me:
+                fin-dev-win-app-01:
                 fin-qa-lnx-app-01:
                 fin-qa-win-app-01:
                 fin-ppd-lnx-db-01:
@@ -55,7 +55,7 @@ all:
               hosts:
                 fin-dev-lnx-web-01:
                 fin-dev-lnx-app-01:
-                winserv.itssolutions.me:
+                fin-dev-win-app-01:
                 rh-dev-lnx-app-01:
                 rh-dev-win-app-01:
                 it-dev-lnx-app-01:
@@ -120,7 +120,7 @@ all:
 
             windows:
               hosts:
-                winserv.itssolutions.me:
+                fin-dev-win-app-01:
                 fin-qa-win-app-01:
                 fin-ppd-win-db-01:
                 fin-prd-win-app-01:

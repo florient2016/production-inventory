@@ -12,8 +12,6 @@ dns_servers:
 
 default_domain: "corp.itssolutions.me"
 
-ansible_common_user: "ansible"
-
 baseline_tags:
   - "managed_by_ansible"
   - "inventory_itssolutions"
