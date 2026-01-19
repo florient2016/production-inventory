@@ -1,5 +1,5 @@
 ansible_host: 10.10.0.6
-
+# environnement d execution
 env: dev
 department: finance
 os_family: windows
