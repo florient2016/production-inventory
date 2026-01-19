@@ -4,9 +4,25 @@ all:
     # =========================
     # Groupes globaux transverses (pour ciblage & group_vars)
     # =========================
-    linux: {}
-    windows: {}
+    #linux: {}
+    #windows: {}
 
+    env_dev: 
+      children:
+        linux: {}
+        windows: {}
+    env_recette: 
+      children:
+        linux: {}
+        windows: {}
+    env_preprod: 
+      children:
+        linux: {}
+        windows: {}
+    env_prod: 
+      children:
+        linux: {}
+        windows: {}
 
     site_cloud: {}
     cloud_aws: {}
@@ -19,26 +35,30 @@ all:
     dept_finance:
       children:
         finance_dev:
-          linux:
-            hosts:
-              fin-dev-lnx-web-01:
-                ansible_host: 10.10.10.11
-              fin-dev-lnx-app-01:
-                ansible_host: 10.10.10.21
-          windows:
-            hosts:
-              fin-dev-win-app-01:
-                ansible_host: 10.10.20.21
+          children:
+            env_dev: 
+              linux:
+                hosts:
+                  fin-dev-lnx-web-01:
+                    ansible_host: 10.10.10.11
+                  fin-dev-lnx-app-01:
+                    ansible_host: 10.10.10.21
+              windows:
+                hosts:
+                  fin-dev-win-app-01:
+                    ansible_host: 10.10.20.21
 
         finance_recette:
-          linux:
-            hosts:
-              fin-qa-lnx-app-01:
-                ansible_host: 10.10.11.21
-          windows:
-            hosts:
-              fin-qa-win-app-01:
-                ansible_host: 10.10.21.21
+          children:
+            env_recette: 
+              linux:
+                hosts:
+                  fin-qa-lnx-app-01:
+                    ansible_host: 10.10.11.21
+              windows:
+                hosts:
+                  fin-qa-win-app-01:
+                    ansible_host: 10.10.21.21
 
         finance_preprod:
           children:
