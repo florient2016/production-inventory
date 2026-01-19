@@ -4,13 +4,9 @@ all:
     # =========================
     # Groupes globaux transverses (pour ciblage & group_vars)
     # =========================
-    srv_rhel: {}
-    srv_editions: {}
+    linux: {}
+    windows: {}
 
-    env_dev: {}
-    env_recette: {}
-    env_preprod: {}
-    env_prod: {}
 
     site_cloud: {}
     cloud_aws: {}
@@ -23,39 +19,35 @@ all:
     dept_finance:
       children:
         finance_dev:
-          children:
-            env_dev: {}
-            srv_rhel:
-              hosts:
-                fin-dev-lnx-web-01:
-                  ansible_host: 10.10.10.11
-                fin-dev-lnx-app-01:
-                  ansible_host: 10.10.10.21
-            srv_editions:
-              hosts:
-                fin-dev-win-app-01:
-                  ansible_host: 10.10.20.21
+          linux:
+            hosts:
+              fin-dev-lnx-web-01:
+                ansible_host: 10.10.10.11
+              fin-dev-lnx-app-01:
+                ansible_host: 10.10.10.21
+          windows:
+            hosts:
+              fin-dev-win-app-01:
+                ansible_host: 10.10.20.21
 
         finance_recette:
-          children:
-            env_recette: {}
-            srv_rhel:
-              hosts:
-                fin-qa-lnx-app-01:
-                  ansible_host: 10.10.11.21
-            srv_editions:
-              hosts:
-                fin-qa-win-app-01:
-                  ansible_host: 10.10.21.21
+          linux:
+            hosts:
+              fin-qa-lnx-app-01:
+                ansible_host: 10.10.11.21
+          windows:
+            hosts:
+              fin-qa-win-app-01:
+                ansible_host: 10.10.21.21
 
         finance_preprod:
           children:
             env_preprod: {}
-            srv_rhel:
+            linux:
               hosts:
                 fin-ppd-lnx-db-01:
                   ansible_host: 10.10.12.31
-            srv_editions:
+            windows:
               hosts:
                 fin-ppd-win-db-01:
                   ansible_host: 10.10.22.31
@@ -63,11 +55,11 @@ all:
         finance_prod:
           children:
             env_prod: {}
-            srv_rhel:
+            linux:
               hosts:
                 fin-prd-lnx-db-01:
                   ansible_host: 10.10.13.31
-            srv_editions:
+            windows:
               hosts:
                 fin-prd-win-app-01:
                   ansible_host: 10.10.23.21
@@ -81,11 +73,11 @@ all:
         rh_dev:
           children:
             env_dev: {}
-            srv_rhel:
+            linux:
               hosts:
                 rh-dev-lnx-app-01:
                   ansible_host: 10.20.10.21
-            srv_editions:
+            windows:
               hosts:
                 rh-dev-win-app-01:
                   ansible_host: 10.20.20.21
@@ -93,11 +85,11 @@ all:
         rh_recette:
           children:
             env_recette: {}
-            srv_rhel:
+            linux:
               hosts:
                 rh-qa-lnx-app-01:
                   ansible_host: 10.20.11.21
-            srv_editions:
+            windows:
               hosts:
                 rh-qa-win-app-01:
                   ansible_host: 10.20.21.21
@@ -105,11 +97,11 @@ all:
         rh_preprod:
           children:
             env_preprod: {}
-            srv_rhel:
+            linux:
               hosts:
                 rh-ppd-lnx-db-01:
                   ansible_host: 10.20.12.31
-            srv_editions:
+            windows:
               hosts:
                 rh-ppd-win-db-01:
                   ansible_host: 10.20.22.31
@@ -117,11 +109,11 @@ all:
         rh_prod:
           children:
             env_prod: {}
-            srv_rhel:
+            linux:
               hosts:
                 rh-prd-lnx-db-01:
                   ansible_host: 10.20.13.31
-            srv_editions:
+            windows:
               hosts:
                 rh-prd-win-app-01:
                   ansible_host: 10.20.23.21
@@ -135,11 +127,11 @@ all:
         it_dev:
           children:
             env_dev: {}
-            srv_rhel:
+            linux:
               hosts:
                 it-dev-lnx-app-01:
                   ansible_host: 10.30.10.21
-            srv_editions:
+            windows:
               hosts:
                 it-dev-win-app-01:
                   ansible_host: 10.30.20.21
@@ -147,11 +139,11 @@ all:
         it_recette:
           children:
             env_recette: {}
-            srv_rhel:
+            linux:
               hosts:
                 it-qa-lnx-app-01:
                   ansible_host: 10.30.11.21
-            srv_editions:
+            windows:
               hosts:
                 it-qa-win-app-01:
                   ansible_host: 10.30.21.21
@@ -159,11 +151,11 @@ all:
         it_preprod:
           children:
             env_preprod: {}
-            srv_rhel:
+            linux:
               hosts:
                 it-ppd-lnx-db-01:
                   ansible_host: 10.30.12.31
-            srv_editions:
+            windows:
               hosts:
                 it-ppd-win-db-01:
                   ansible_host: 10.30.22.31
@@ -171,11 +163,11 @@ all:
         it_prod:
           children:
             env_prod: {}
-            srv_rhel:
+            linux:
               hosts:
                 it-prd-lnx-db-01:
                   ansible_host: 10.30.13.31
-            srv_editions:
+            windows:
               hosts:
                 it-prd-win-app-01:
                   ansible_host: 10.30.23.21
@@ -189,11 +181,11 @@ all:
         sales_dev:
           children:
             env_dev: {}
-            srv_rhel:
+            linux:
               hosts:
                 sales-dev-lnx-web-01:
                   ansible_host: 10.40.10.11
-            srv_editions:
+            windows:
               hosts:
                 sales-dev-win-app-01:
                   ansible_host: 10.40.20.21
@@ -201,11 +193,11 @@ all:
         sales_recette:
           children:
             env_recette: {}
-            srv_rhel:
+            linux:
               hosts:
                 sales-qa-lnx-app-01:
                   ansible_host: 10.40.11.21
-            srv_editions:
+            windows:
               hosts:
                 sales-qa-win-app-01:
                   ansible_host: 10.40.21.21
@@ -213,11 +205,11 @@ all:
         sales_preprod:
           children:
             env_preprod: {}
-            srv_rhel:
+            linux:
               hosts:
                 sales-ppd-lnx-db-01:
                   ansible_host: 10.40.12.31
-            srv_editions:
+            windows:
               hosts:
                 sales-ppd-win-db-01:
                   ansible_host: 10.40.22.31
@@ -225,11 +217,11 @@ all:
         sales_prod:
           children:
             env_prod: {}
-            srv_rhel:
+            linux:
               hosts:
                 sales-prd-lnx-db-01:
                   ansible_host: 10.40.13.31
-            srv_editions:
+            windows:
               hosts:
                 sales-prd-win-app-01:
                   ansible_host: 10.40.23.21
