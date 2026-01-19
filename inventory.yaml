@@ -34,13 +34,14 @@ all:
     # =========================
     dept_finance:
       children:
-        env_dev: {}
-        linux:
-          hosts:
-            fin-dev-lnx-svc-01:
-              ansible_host: 10.10.10.11
-            fin-dev-lnx-app-01:
-              ansible_host: 10.10.10.21
+        env_dev: 
+          children: 
+            linux:
+              hosts:
+                fin-dev-lnx-svc-01:
+                  ansible_host: 10.10.10.11
+                fin-dev-lnx-app-01:
+                  ansible_host: 10.10.10.21
             windows:
               hosts:
                 fin-dev-win-app-01:
