@@ -238,10 +238,14 @@ all:
           children:
             env_dev: {}
             linux:
+              children:
+                linux: {}
               hosts:
                 sales-dev-lnx-web-01:
                   ansible_host: 10.40.10.11
             windows:
+              children:
+                windows: {}
               hosts:
                 sales-dev-win-app-01:
                   ansible_host: 10.40.20.21
