@@ -26,32 +26,28 @@ all:
           children:
             env_dev: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 fin-dev-lnx-web-01:
                   ansible_host: 10.10.10.11
                 fin-dev-lnx-app-01:
                   ansible_host: 10.10.10.21
-            windows:
               children:
-                windows: {}
+                linux: {}
+            windows:
               hosts:
                 fin-dev-win-app-01:
                   ansible_host: 10.10.20.21
+              children:
+                windows: {}
 
         finance_recette:
           children:
             env_recette: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 fin-qa-lnx-app-01:
                   ansible_host: 10.10.11.21
             windows:
-              children:
-                windows: {}
               hosts:
                 fin-qa-win-app-01:
                   ansible_host: 10.10.21.21
@@ -60,14 +56,10 @@ all:
           children:
             env_preprod: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 fin-ppd-lnx-db-01:
                   ansible_host: 10.10.12.31
             windows:
-              children:
-                windows: {}
               hosts:
                 fin-ppd-win-db-01:
                   ansible_host: 10.10.22.31
@@ -76,14 +68,10 @@ all:
           children:
             env_prod: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 fin-prd-lnx-db-01:
                   ansible_host: 10.10.13.31
             windows:
-              children:
-                windows: {}
               hosts:
                 fin-prd-win-app-01:
                   ansible_host: 10.10.23.21
@@ -98,14 +86,10 @@ all:
           children:
             env_dev: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 rh-dev-lnx-app-01:
                   ansible_host: 10.20.10.21
             windows:
-              children:
-                windows: {}
               hosts:
                 rh-dev-win-app-01:
                   ansible_host: 10.20.20.21
@@ -114,14 +98,10 @@ all:
           children:
             env_recette: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 rh-qa-lnx-app-01:
                   ansible_host: 10.20.11.21
             windows:
-              children:
-                windows: {}
               hosts:
                 rh-qa-win-app-01:
                   ansible_host: 10.20.21.21
@@ -130,14 +110,10 @@ all:
           children:
             env_preprod: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 rh-ppd-lnx-db-01:
                   ansible_host: 10.20.12.31
             windows:
-              children:
-                windows: {}
               hosts:
                 rh-ppd-win-db-01:
                   ansible_host: 10.20.22.31
@@ -146,14 +122,10 @@ all:
           children:
             env_prod: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 rh-prd-lnx-db-01:
                   ansible_host: 10.20.13.31
             windows:
-              children:
-                windows: {}
               hosts:
                 rh-prd-win-app-01:
                   ansible_host: 10.20.23.21
@@ -168,14 +140,10 @@ all:
           children:
             env_dev: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 it-dev-lnx-app-01:
                   ansible_host: 10.30.10.21
             windows:
-              children:
-                windows: {}
               hosts:
                 it-dev-win-app-01:
                   ansible_host: 10.30.20.21
@@ -184,14 +152,10 @@ all:
           children:
             env_recette: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 it-qa-lnx-app-01:
                   ansible_host: 10.30.11.21
             windows:
-              children:
-                windows: {}
               hosts:
                 it-qa-win-app-01:
                   ansible_host: 10.30.21.21
@@ -200,14 +164,10 @@ all:
           children:
             env_preprod: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 it-ppd-lnx-db-01:
                   ansible_host: 10.30.12.31
             windows:
-              children:
-                windows: {}
               hosts:
                 it-ppd-win-db-01:
                   ansible_host: 10.30.22.31
@@ -216,14 +176,10 @@ all:
           children:
             env_prod: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 it-prd-lnx-db-01:
                   ansible_host: 10.30.13.31
             windows:
-              children:
-                windows: {}
               hosts:
                 it-prd-win-app-01:
                   ansible_host: 10.30.23.21
@@ -238,14 +194,10 @@ all:
           children:
             env_dev: {}
             linux:
-              children:
-                linux: {}
               hosts:
                 sales-dev-lnx-web-01:
                   ansible_host: 10.40.10.11
             windows:
-              children:
-                windows: {}
               hosts:
                 sales-dev-win-app-01:
                   ansible_host: 10.40.20.21
