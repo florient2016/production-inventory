@@ -1,0 +1,10 @@
+function: "app"
+role_tier: "backend"
+owner_team: "dept_Informatique"
+ansible_host: 10.10.0.5
+
+env: dev
+department: IT
+os_family: K8s
+host_role: app
+criticality: low
