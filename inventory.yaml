@@ -31,12 +31,13 @@ all:
               hosts:
                 it-dev-lnx-app-01:
                 it-dev-win-app-01:
+                it-dev-k8s-app-01:
                 it-qa-lnx-app-01:
                 it-qa-win-app-01:
                 it-ppd-lnx-db-01:
                 it-ppd-win-db-01:
                 it-prd-lnx-db-01:
-                it-prd-win-app-01:
+                it-prd-win-app-01:             
 
             dept_sales:
               hosts:
@@ -55,13 +56,14 @@ all:
               hosts:
                 fin-dev-lnx-web-01:
                 fin-dev-lnx-app-01:
+                it-dev-k8s-app-01:
                 fin-dev-win-app-01:
                 rh-dev-lnx-app-01:
                 rh-dev-win-app-01:
                 it-dev-lnx-app-01:
                 it-dev-win-app-01:
                 sales-dev-lnx-web-01:
-                sales-dev-win-app-01:
+                sales-dev-win-app-01:     
 
             env_recette:
               hosts:
@@ -136,3 +138,9 @@ all:
                 sales-qa-win-app-01:
                 sales-ppd-win-db-01:
                 sales-prd-win-app-01:
+
+            k8s:
+              hosts:
+                it-dev-k8s-app-01:
+
+            
