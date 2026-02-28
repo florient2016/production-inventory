@@ -36,6 +36,7 @@ all:
                 it-qa-win-app-01:
                 it-ppd-lnx-db-01:
                 it-ppd-win-db-01:
+                it-ppd-ocp-app-01:
                 it-prd-lnx-db-01:
                 it-prd-win-app-01:             
 
@@ -84,6 +85,7 @@ all:
                 rh-ppd-win-db-01:
                 it-ppd-lnx-db-01:
                 it-ppd-win-db-01:
+                it-ppd-ocp-app-01:
                 sales-ppd-lnx-db-01:
                 sales-ppd-win-db-01:
 
@@ -142,5 +144,11 @@ all:
             k8s:
               hosts:
                 it-dev-k8s-app-01:
+
+            ocp:
+              hosts:
+                it-ppd-ocp-app-01:
+
+            
 
             
